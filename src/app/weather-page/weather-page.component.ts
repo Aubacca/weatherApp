@@ -5,6 +5,7 @@ import { Component, OnInit } from "@angular/core";
   template: `
       <div class="container">
         <form (ngSubmit)="doSubmit(citySearch)" #citySearch="ngForm">
+          <span>Name der Stadt für die Wettersuche erfassen.</span>
           <label for="">Stadt:</label>
           <input type="text" name="cityName" ngModel placeholder="Enter name of the city to be searched for..">
           <br>
