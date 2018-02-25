@@ -17,7 +17,7 @@ import { WeatherService } from "./service/weather.service";
   styleUrls: ["./weather-page.component.css"]
 })
 export class WeatherPageComponent implements OnInit {
-  private weatherData;
+  public weatherData;
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {}
