@@ -5,6 +5,7 @@
 /dist-server
 /tmp
 /out-tsc
+/src/assets/keys
 
 # dependencies
 /node_modules
@@ -30,7 +31,7 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
-src/assets/keys
+
 npm-debug.log
 testem.log
 /typings
