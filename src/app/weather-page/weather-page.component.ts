@@ -1,23 +1,39 @@
 import { Component, OnInit } from "@angular/core";
-import { WeatherService } from "./service/weather.service";
+import { WeatherService } from "../service/weather.service";
+import { IWeather } from "../model/weather.model";
 
 @Component({
   selector: "app-weather-page",
   template: `
-      <div class="container">
+      <div>
         <form (ngSubmit)="doSubmit(citySearch)" #citySearch="ngForm">
           <label for="">Stadt:</label>
           <input type="text" name="cityName" ngModel placeholder="Enter name of the city to be searched for..">
           <br>
           <input type="submit" value="Search">
         </form>
-        <div>{{this.weatherData | json}}</div>
+        
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h3>{{weatherData.name}}</h3></div>
+          <div class="card-body">
+            <p class="card-text"><app-weather-details [weatherList]=weatherData.weather></app-weather-details></p>
+          </div>
+        </div>
+
+        <div>{{weatherData | json}}</div>
+
+<!--
+        <div class="container">
+          <h3>{{weatherData.name}}</h3>
+          <app-weather-details [weatherList]=weatherData.weather></app-weather-details>
+        </div>
+-->
       </div>
     `,
   styleUrls: ["./weather-page.component.css"]
 })
 export class WeatherPageComponent implements OnInit {
-  public weatherData;
+  public weatherData: IWeather;
   constructor(private weatherService: WeatherService) {}
 
   ngOnInit() {}
@@ -25,9 +41,8 @@ export class WeatherPageComponent implements OnInit {
   doSubmit(searchValues) {
     console.log("Form submitted! searchValue: ", searchValues);
     console.log("Form submitted! cityName: ", searchValues.value.cityName);
-    this.weatherData = this.weatherService
+    this.weatherService
       .getWeather(searchValues.value.cityName)
       .subscribe(data => (this.weatherData = data));
-    console.log("this.weatherData:", this.weatherData);
   }
 }
