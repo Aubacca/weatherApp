@@ -16,11 +16,15 @@ import { IWeather } from "../model/weather.model";
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
           <div class="card-header"><h3>{{weatherData.name}}</h3></div>
           <div class="card-body">
-            <p class="card-text"><app-weather-details [weatherList]=weatherData.weather></app-weather-details></p>
+            <p class="card-text">
+              <app-weather-details [weatherList]=weatherData.weather></app-weather-details>
+              <app-weather-main [weatherMain]=weatherData.main></app-weather-main>
+            </p>
           </div>
         </div>
 
         <div>{{weatherData | json}}</div>
+        <div>{{weatherData.main | json}}</div>
 
 <!--
         <div class="container">
