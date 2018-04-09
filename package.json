@@ -6,6 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
+    "build:MDMD":
+      "ng build --prod --aot --base-href https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/ --deploy-url https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -6,14 +6,16 @@ import { IWeather } from "../model/weather.model";
   selector: "app-weather-page",
   template: `
       <div>
+        <hr>
         <form (ngSubmit)="doSubmit(citySearch)" #citySearch="ngForm">
           <label for="">Stadt:</label>
           <input type="text" name="cityName" ngModel placeholder="Enter name of the city to be searched for..">
-          <br>
           <input type="submit" value="Search">
         </form>
+
+        <hr>
         
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngIf="weatherData">
           <div class="card-header"><h3>{{weatherData.name}}</h3></div>
           <div class="card-body">
             <p class="card-text">
@@ -23,8 +25,12 @@ import { IWeather } from "../model/weather.model";
           </div>
         </div>
 
-        <div>{{weatherData | json}}</div>
-        <div>{{weatherData.main | json}}</div>
+        <hr>
+
+        <div *ngIf="weatherData">
+          <div>{{weatherData | json}}</div>
+          <div>{{weatherData.main | json}}</div>
+        </div>
 
 <!--
         <div class="container">

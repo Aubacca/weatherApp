@@ -16,7 +16,10 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {
     this.http
-      .get<any>("/assets/keys/weatherApi.json")
+      .get<any>(
+        //        "https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/assets/keys/weatherApi.json"
+        "./assets/keys/weatherApi.json"
+      )
       .subscribe(data => (this.apiKey = data.licenseKey));
   }
 
