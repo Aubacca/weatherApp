@@ -30,6 +30,9 @@
 /connect.lock
 /coverage
 /libpeerconnection.log
+/src/assets/keys
+/samples
+
 npm-debug.log
 testem.log
 /typings

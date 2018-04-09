@@ -1,0 +1,1 @@
+ng serve --aot --port 5000

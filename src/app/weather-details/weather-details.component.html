@@ -1,0 +1,12 @@
+<div class="container" *ngFor="let weaterData of weatherList">
+  <h5 class="card-title">{{weaterData.description}}</h5>
+  <p class="card-text">Main: {{weaterData.main}}</p>
+  <img src="./assets/img/{{weaterData.icon}}.png" alt="{{weaterData.icon}}">
+</div>
+
+
+<!--<p>
+  weather-details works!
+</p>
+<div>{{weatherList | json}}</div>
+-->
