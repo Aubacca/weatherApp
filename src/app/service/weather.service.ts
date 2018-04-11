@@ -13,21 +13,21 @@ import { environment } from "../../environments/environment";
 
 @Injectable()
 export class WeatherService {
-  private apiKey: string = undefined;
+  private _apiKey: string = undefined;
 
-  constructor(private http: HttpClient) {
-    this.http
+  constructor(private _http: HttpClient) {
+    this._http
       .get<any>(environment.apiUrl + "/assets/keys/weatherApi.json")
-      .subscribe(data => (this.apiKey = data.licenseKey));
+      .subscribe(data => (this._apiKey = data.licenseKey));
   }
 
   getWeather(cityName: string): Observable<IWeather> {
     console.log("getWeather>cityName=", cityName);
     let options: Object = { responseType: "json" };
     //
-    return this.http.get<IWeather>(
+    return this._http.get<IWeather>(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=de&units=metric&appid=${
-        this.apiKey
+        this._apiKey
       }`,
       options
     );
