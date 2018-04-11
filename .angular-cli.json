@@ -23,6 +23,7 @@
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
+        "MDMD": "environments/environment.mdmd.ts",
         "prod": "environments/environment.prod.ts"
       }
     }

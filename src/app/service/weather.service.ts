@@ -9,6 +9,7 @@ import {
 import { Observable } from "rxjs";
 
 import { IWeather } from "../model/weather.model";
+import { environment } from "../../environments/environment";
 
 @Injectable()
 export class WeatherService {
@@ -16,10 +17,7 @@ export class WeatherService {
 
   constructor(private http: HttpClient) {
     this.http
-      .get<any>(
-        //        "https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/assets/keys/weatherApi.json"
-        "./assets/keys/weatherApi.json"
-      )
+      .get<any>(environment.apiUrl + "/assets/keys/weatherApi.json")
       .subscribe(data => (this.apiKey = data.licenseKey));
   }
 
