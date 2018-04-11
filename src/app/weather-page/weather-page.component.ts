@@ -18,10 +18,12 @@ import { IWeather } from "../model/weather.model";
         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngIf="weatherData">
           <div class="card-header"><h3>{{weatherData.name}}</h3></div>
           <div class="card-body">
-            <p class="card-text">
+            <div class="card-text">
               <app-weather-details [weatherList]=weatherData.weather></app-weather-details>
               <app-weather-main [weatherMain]=weatherData.main></app-weather-main>
-            </p>
+              <hr>
+              <app-wind-detail [wind]=weatherData.wind></app-wind-detail>
+            </div>
           </div>
         </div>
 
@@ -44,14 +46,14 @@ import { IWeather } from "../model/weather.model";
 })
 export class WeatherPageComponent implements OnInit {
   public weatherData: IWeather;
-  constructor(private weatherService: WeatherService) {}
+  constructor(private _weatherService: WeatherService) {}
 
   ngOnInit() {}
 
   doSubmit(searchValues) {
     console.log("Form submitted! searchValue: ", searchValues);
     console.log("Form submitted! cityName: ", searchValues.value.cityName);
-    this.weatherService
+    this._weatherService
       .getWeather(searchValues.value.cityName)
       .subscribe(data => (this.weatherData = data));
   }
