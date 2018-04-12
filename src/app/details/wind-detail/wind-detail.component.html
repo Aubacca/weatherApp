@@ -1,2 +1,5 @@
-<div>Windgeschwindigkeit: {{wind.speed}} m/s</div>
-<div>Windrichtung: {{wind.deg}}</div>
+<h5 class="card-title">Wind</h5>
+<div class="container">
+  <div>Geschwindigkeit: {{wind.speed}} m/s</div>
+  <div>Richtung: {{wind.deg | windDirection}}</div>
+</div>

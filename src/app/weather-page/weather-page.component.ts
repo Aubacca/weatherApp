@@ -8,44 +8,38 @@ import { IWeather } from "../model/weather.model";
       <div>
         <hr>
         <form (ngSubmit)="doSubmit(citySearch)" #citySearch="ngForm">
-          <label for="">Stadt:</label>
-          <input type="text" name="cityName" ngModel placeholder="Enter name of the city to be searched for..">
+          <label for="cityName">Stadt:</label>
+          <input type="text" name="cityName" id="cityName" ngModel placeholder="Enter name of the city to be searched for..">
           <input type="submit" value="Search">
         </form>
 
-        <hr>
-        
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" *ngIf="weatherData">
-          <div class="card-header"><h3>{{weatherData.name}}</h3></div>
-          <div class="card-body">
-            <div class="card-text">
-              <app-weather-details [weatherList]=weatherData.weather></app-weather-details>
-              <app-weather-main [weatherMain]=weatherData.main></app-weather-main>
-              <hr>
-              <app-wind-detail [wind]=weatherData.wind></app-wind-detail>
+        <div *ngIf="weatherData">
+          <hr>
+          <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+            <div class="card-header"><h3>{{weatherData.name}}</h3></div>
+            <div class="card-body">
+              <div class="card-text">
+                <app-weather-data [weatherList]=weatherData.weather></app-weather-data>
+                <app-condition-detail [weatherMain]=weatherData.main></app-condition-detail>
+                <app-wind-detail [wind]=weatherData.wind></app-wind-detail>
+              </div>
             </div>
           </div>
+  
+          <hr>
+          <div *ngIf="weatherData">
+            <div>{{weatherData | json}}</div>
+            <div>{{weatherData.main | json}}</div>
+          </div>
         </div>
-
-        <hr>
-
-        <div *ngIf="weatherData">
-          <div>{{weatherData | json}}</div>
-          <div>{{weatherData.main | json}}</div>
-        </div>
-
-<!--
-        <div class="container">
-          <h3>{{weatherData.name}}</h3>
-          <app-weather-details [weatherList]=weatherData.weather></app-weather-details>
-        </div>
--->
       </div>
     `,
   styleUrls: ["./weather-page.component.css"]
 })
 export class WeatherPageComponent implements OnInit {
   public weatherData: IWeather;
+  weather: any;
+
   constructor(private _weatherService: WeatherService) {}
 
   ngOnInit() {}
