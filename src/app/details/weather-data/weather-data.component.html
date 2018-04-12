@@ -1,0 +1,5 @@
+<div *ngFor="let weaterData of weatherList">
+  <h5 class="card-title">{{weaterData.description}}</h5>
+  <p style="font-style: italic">Main: {{weaterData.main}}</p>
+  <img src="./assets/img/{{weaterData.icon}}.png" alt="{{weaterData.icon}}">
+</div>

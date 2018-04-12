@@ -1,15 +1,13 @@
 {
   "name": "weather-app",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "build:MDMD":
-      "ng build --env=MDMD --prod --aot --base-href https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/ --deploy-url https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/",
-    "build:MDMT":
-      "ng build --prod --aot --env=prod --base-href https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/ --deploy-url https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/",
+    "build:MDMD": "ng build --env=MDMD --prod --aot --base-href https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/ --deploy-url https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/",
+    "build:MDMT": "ng build --prod --aot --env=prod --base-href https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/ --deploy-url https://mdms-dev.roche.com/mdms-docs/pages/weatherApp/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

@@ -29,3 +29,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Fixing base and deployment URL
 
 https://shekhargulati.com/2017/07/06/angular-4-use-of-base-href-and-deploy-url-build-options/
+
+## npm tasks
+
+npm ls: list all local installed packages.
+npm outdated: list all outdated installed local packages.
