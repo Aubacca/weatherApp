@@ -34,3 +34,7 @@ https://shekhargulati.com/2017/07/06/angular-4-use-of-base-href-and-deploy-url-b
 
 npm ls: list all local installed packages.
 npm outdated: list all outdated installed local packages.
+
+## Adaptive Layout Design – Angular Flex Layout
+
+https://theinfogrid.com/tech/developers/angular/adaptive-layout-design-angular-flex-layout/
