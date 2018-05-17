@@ -25,6 +25,6 @@ export class WindDirectionPipe implements PipeTransform {
         windDirection = "NSEW ????";
         break;
     }
-    return windDirection;
+    return `${windDirection} (${value}°)`;
   }
 }

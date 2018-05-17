@@ -21,7 +21,7 @@ import { IWeather } from "../model/weather.model";
               <div class="card-text">
                 <app-weather-data [weatherList]=weatherData.weather></app-weather-data>
                 <app-condition-detail [weatherMain]=weatherData.main></app-condition-detail>
-                <app-wind-detail [wind]=weatherData.wind></app-wind-detail>
+                <app-wind-detail [wind]=weatherData.wind [visibility]=weatherData.visibility [sys]=weatherData.sys></app-wind-detail>
               </div>
             </div>
           </div>
