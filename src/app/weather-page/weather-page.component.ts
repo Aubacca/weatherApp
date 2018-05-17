@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { WeatherService } from "../service/weather.service";
-import { IWeather } from "../model/weather.model";
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../service/weather.service';
+import { IWeather } from '../model/weather.model';
 
 @Component({
-  selector: "app-weather-page",
+  selector: 'app-weather-page',
   template: `
       <div>
         <hr>
@@ -12,7 +12,6 @@ import { IWeather } from "../model/weather.model";
           <input type="text" name="cityName" id="cityName" ngModel placeholder="Enter name of the city to be searched for..">
           <input type="submit" value="Search">
         </form>
-
         <div *ngIf="weatherData">
           <hr>
           <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
@@ -25,7 +24,6 @@ import { IWeather } from "../model/weather.model";
               </div>
             </div>
           </div>
-  
           <hr>
           <div *ngIf="weatherData">
             <div>{{weatherData | json}}</div>
@@ -34,7 +32,7 @@ import { IWeather } from "../model/weather.model";
         </div>
       </div>
     `,
-  styleUrls: ["./weather-page.component.css"]
+  styleUrls: ['./weather-page.component.css']
 })
 export class WeatherPageComponent implements OnInit {
   public weatherData: IWeather;
@@ -45,8 +43,8 @@ export class WeatherPageComponent implements OnInit {
   ngOnInit() {}
 
   doSubmit(searchValues) {
-    console.log("Form submitted! searchValue: ", searchValues);
-    console.log("Form submitted! cityName: ", searchValues.value.cityName);
+    console.log('Form submitted! searchValue:', searchValues);
+    console.log('Form submitted! cityName:', searchValues.value.cityName);
     this._weatherService
       .getWeather(searchValues.value.cityName)
       .subscribe(data => (this.weatherData = data));
