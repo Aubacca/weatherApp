@@ -1,5 +1,20 @@
-<div *ngFor="let weaterData of weatherList">
-  <h5 class="card-title">{{weaterData.description}}</h5>
-  <p style="font-style: italic">Main: {{weaterData.main}}</p>
-  <img src="./assets/img/{{weaterData.icon}}.png" alt="{{weaterData.icon}}">
+<h5 class="card-title">Wetter</h5>
+<div class="container">
+  <div *ngFor="let weaterData of weatherList" style="float: left;">
+    <div>
+      {{weaterData.description}}
+      <div style="font-style: italic;">({{weaterData.main}})</div>
+      <div>
+        <img src="./assets/img/{{weaterData.icon}}.png " alt="{{weaterData.icon}} ">
+      </div>
+    </div>
+  </div>
+  <div style="clear: both; "></div>
 </div>
+
+
+<!-- <span *ngFor="let weaterData of weatherList ">
+  <h5 class="card-title ">{{weaterData.description}}</h5>
+  <p style="font-style: italic ">Main: {{weaterData.main}}</p>
+  <img src="./assets/img/{{weaterData.icon}}.png " alt="{{weaterData.icon}} ">
+</span> -->

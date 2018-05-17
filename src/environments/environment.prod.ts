@@ -1,4 +1,1 @@
-export const environment = {
-  production: true,
-  apiUrl: "http://www.rohner.ch"
-};
+export const environment = { production: true, apiUrl: 'http://www.rohner.ch' };

@@ -3,3 +3,16 @@
   <div>Geschwindigkeit: {{wind.speed}} m/s</div>
   <div>Richtung: {{wind.deg | windDirection}}</div>
 </div>
+
+<h5 class="card-title">Sicht</h5>
+<div class="container">
+  <div>Sichtweite: {{visibility}} m</div>
+</div>
+
+<h5 class="card-title">Systeminfo</h5>
+<div class="container">
+  <div>Land: {{sys.country}}</div>
+  <h6>Sonne</h6>
+  <div>Aufgang: {{sunrise}}</div>
+  <div>Untergang: {{sunset}}</div>
+</div>

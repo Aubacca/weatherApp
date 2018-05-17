@@ -1,7 +1,7 @@
-import { WindDirectionPipe } from "./wind-direction.pipe";
+import { WindDirectionPipe } from './wind-direction.pipe';
 
-fdescribe("WindDirectionPipe", () => {
-  it("create an instance", () => {
+describe('WindDirectionPipe', () => {
+  it('create an instance', () => {
     const pipe = new WindDirectionPipe();
     expect(pipe).toBeTruthy();
   });

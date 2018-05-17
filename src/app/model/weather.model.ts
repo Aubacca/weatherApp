@@ -39,7 +39,7 @@ export interface IWeatherSys {
 export interface IWeather {
   id: number;
   name: string;
-  main: IWeatherMain;
+  main: IWeatherMain[];
   visibility: number;
   coord: IWeatherCoord;
   weather: IWeatherWeather[];
