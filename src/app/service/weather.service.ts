@@ -18,7 +18,8 @@ export class WeatherService {
   constructor(private _http: HttpClient) {
     this._http
       // .get<any>(environment.apiUrl + "/assets/keys/weatherApi.json")
-      .get<any>('./assets/keys/weatherApi.json')
+      // .get<any>('./assets/keys/weatherApi.json')
+      .get<any>(`${environment.assetBaseUrl}/assets/keys/weatherApi.json`)
       .subscribe(data => (this._apiKey = data.licenseKey));
   }
 
