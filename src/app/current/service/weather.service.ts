@@ -8,10 +8,12 @@ import {
 
 import { Observable } from 'rxjs';
 
-import { IWeather } from '../model/weather.model';
-import { environment } from '../../environments/environment';
+import { IWeather } from '@app/model/weather.model';
+import { environment } from '@env/environment';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class WeatherService {
   private _apiKey: string = undefined;
 

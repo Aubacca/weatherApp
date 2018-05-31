@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 
-import { IWeatherMain } from '../../model/weather.model';
+import { IWeatherMain } from '@app/model/weather.model';
 
 @Component({
   selector: 'app-condition-detail',
