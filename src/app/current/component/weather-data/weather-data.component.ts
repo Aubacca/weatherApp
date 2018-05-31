@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { IWeatherWeather } from '@app/model/weather.model';
 
-import { IWeatherWeather } from '../../model/weather.model';
+// import { IWeatherWeather } from '../../model/weather.model';
 
 @Component({
   selector: 'app-weather-data',

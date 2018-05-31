@@ -1,10 +1,11 @@
-import {
-  IWeatherWind,
-  IWeatherMain,
-  IWeather,
-  IWeatherSys
-} from './../../model/weather.model';
+// import {
+//   IWeatherWind,
+//   IWeatherMain,
+//   IWeather,
+//   IWeatherSys
+// } from './../../model/weather.model';
 import { Component, OnInit, Input } from '@angular/core';
+import { IWeatherWind, IWeatherSys } from '@app/model/weather.model';
 
 @Component({
   selector: 'app-wind-detail',
