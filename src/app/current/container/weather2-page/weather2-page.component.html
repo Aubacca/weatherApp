@@ -1,0 +1,7 @@
+<p>
+  weather2-page works!
+</p>
+<a routerLink="/" routerLinkActive="active">Home</a>
+<div class="container" *ngIf="!!(weatherData$ | async)">
+  {{ (weatherData$ | async) | json }}
+</div>

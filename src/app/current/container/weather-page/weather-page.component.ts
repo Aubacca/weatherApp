@@ -6,6 +6,7 @@ import { WeatherService } from '@currentWeather/service/weather.service';
 @Component({
   selector: 'app-weather-page',
   template: `
+      <a routerLink="/" routerLinkActive="active">Home</a>
       <div>
         <hr>
         <form (ngSubmit)="doSubmit(citySearch)" #citySearch="ngForm">
