@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { WeatherPageComponent } from '@currentWeather/container/weather-page/weather-page.component';
+import { ObsWeatherComponent } from '@app/withObservables/containers/obsWeather/obsWeather.component';
 
 const routes: Routes = [
   {
-    path: 'current',
-    component: WeatherPageComponent
+    path: 'obsWeather',
+    component: ObsWeatherComponent
   }
 ];
 
@@ -14,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CurrentRoutingModule {}
+export class WithObservablesRoutingModule {}

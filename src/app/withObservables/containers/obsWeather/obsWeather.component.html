@@ -1,0 +1,13 @@
+<p>
+  obsWeather works!
+</p>
+<a routerLink="/" routerLinkActive="active">Home</a>
+<div class="container" *ngIf="!!(weatherData$ | async)">
+  {{ (weatherData$ | async) | json }}
+</div>
+
+<app-coord [data$]="(weatherData$)" [coord$]="(((weatherData$ | async) | json).coord)"></app-coord>
+<app-main></app-main>
+<app-sys></app-sys>
+<app-weather></app-weather>
+<app-wind></app-wind>

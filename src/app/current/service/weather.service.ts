@@ -26,7 +26,7 @@ export class WeatherService {
   }
 
   getWeather(cityName: string): Observable<IWeather> {
-    console.log('getWeather>cityName=', cityName);
+    console.log('WeatherService.getWeather>cityName:', cityName);
     const options: Object = { responseType: 'json' };
     //
     return this._http.get<IWeather>(

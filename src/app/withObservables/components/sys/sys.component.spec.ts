@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Weather2PageComponent } from './weather2-page.component';
+import { SysComponent } from './sys.component';
 
-describe('Weather2PageComponent', () => {
-  let component: Weather2PageComponent;
-  let fixture: ComponentFixture<Weather2PageComponent>;
+describe('SysComponent', () => {
+  let component: SysComponent;
+  let fixture: ComponentFixture<SysComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Weather2PageComponent ]
+      declarations: [ SysComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Weather2PageComponent);
+    fixture = TestBed.createComponent(SysComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

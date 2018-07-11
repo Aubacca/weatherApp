@@ -1,4 +1,4 @@
-interface RootWeather {
+interface ObsWeather {
   coord: Coord;
   weather: Weather[];
   base: string;

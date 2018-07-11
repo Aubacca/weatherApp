@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from '@env/environment';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
+
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class Weather2Service {
+export class ObsWeatherService {
   private _apiKey: string = undefined;
 
   constructor(private _http: HttpClient) {
@@ -16,15 +17,15 @@ export class Weather2Service {
       // .get<any>(environment.apiUrl + "/assets/keys/weatherApi.json")
       // .get<any>('./assets/keys/weatherApi.json')
       .get<any>(`${environment.assetBaseUrl}/assets/keys/weatherApi.json`)
-      .pipe(tap(r => console.log('Weather2Service.ctor>License key: ', r)))
+      .pipe(tap(r => console.log('ObsWeatherService.ctor>License key: ', r)))
       .subscribe(data => (this._apiKey = data.licenseKey));
   }
 
-  getWeather(cityName: string): Observable<RootWeather> {
-    console.log('getWeather>cityName=', cityName);
+  getWeather(cityName: string): Observable<ObsWeather> {
+    console.log('ObsWeatherService.getWeather>cityName:', cityName);
     const options: Object = { responseType: 'json' };
     //
-    return this._http.get<RootWeather>(
+    return this._http.get<ObsWeather>(
       `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=de&units=metric&appid=${
         this._apiKey
       }`,
